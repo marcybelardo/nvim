@@ -17,16 +17,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 local servers = {
-	{ "bashls", {} },
-	{ "clangd", {} },
-	{ "gopls", {} },
-	{ "elixirls", { cmd = { "/usr/share/elixir-ls/language_server.sh" } } },
-	{ "lua_ls", {} },
-	{ "rust_analyzer", {} },
-	{ "zls", {} },
+	bashls = {},
+	clangd = {},
+	gopls = {},
+	elixirls = { cmd = { "/usr/share/elixir-ls/language_server.sh" } },
+	lua_ls = {},
+	rust_analyzer = {},
+	zls = {},
 }
 
-local function lsp_setup(server, opts)
+for server, opts in pairs(servers) do
     if vim.fn.has("nvim-0.11") == 0 then
         require("lspconfig")[server].setup(opts)
         return
@@ -37,8 +37,4 @@ local function lsp_setup(server, opts)
     end
 
     vim.lsp.enable(server)
-end
-
-for server, opts in pairs(servers) do
-	lsp_setup(server, opts)
 end
