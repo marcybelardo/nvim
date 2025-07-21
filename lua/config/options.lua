@@ -42,6 +42,8 @@ end
 
 vim.diagnostic.config({
 	signs = false,
-	virtual_lines = true,
+	virtual_lines = {
+		current_line = true,
+	},
 })
 

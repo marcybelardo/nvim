@@ -15,4 +15,5 @@ wk.setup({
 wk.add({
 	{ "<leader>f", group = "Fuzzy Find" },
 	{ "<leader>b", group = "Buffer" },
+	{ "g", group = "LSP" },
 })
