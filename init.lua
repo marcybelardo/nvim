@@ -58,6 +58,7 @@ lazy.plugins = {
 	{ "echasnovski/mini.nvim", branch = "main" },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", branch = "main" },
 	{ "MeanderingProgrammer/render-markdown.nvim" },
+	{ "gpanders/nvim-parinfer" },
 }
 
 if vim.fn.has("nvim-0.11") == 0 then

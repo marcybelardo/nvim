@@ -1,5 +1,4 @@
 require("mini.icons").setup({ style = "glyph" })
-require("mini.comment").setup({})
 require("mini.surround").setup({})
 require("mini.notify").setup({
 	lsp_progress = { enable = false },
