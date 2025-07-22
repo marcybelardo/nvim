@@ -26,11 +26,8 @@ set linebreak
 set list
 set number
 set relativenumber
-set scrolloff=2
 set shiftwidth=4
-set sidescrolloff=5
 set smartcase
-set smarttab
 set smoothscroll
 set softtabstop=4
 set splitright

@@ -117,5 +117,9 @@ plug github.com/echasnovski/mini.nvim
 plug github.com/MeanderingProgrammer/render-markdown.nvim
 plug github.com/gpanders/nvim-parinfer
 plug github.com/nvim-treesitter/nvim-treesitter
+plug tpope.io/vim/surround.git
+plug tpope.io/vim/fugitive.git
+plug tpope.io/vim/abolish.git
+plug tpope.io/vim/sensible.git
 
 packup

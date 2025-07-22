@@ -3,7 +3,6 @@
     ((. m# :setup) ,(or ?opts {}))
     ,...))
 
-(setup :mini.surround)
 (setup :mini.icons)
 (setup :mini.files {:mappings {:go_in_plus :<CR>}}
   (keymap :n "<Space>e" #(MiniFiles.open)))
