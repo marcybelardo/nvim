@@ -1,6 +1,5 @@
-{:filetypes ["c" "cpp"]
- :cmd ["clangd" "--background-index"]
- :root_markers [".clangd" ["compile_commands.json" "compile_flags.txt"]]
- :flags {:debounce_text_changes 20}
- :capabilities {:textDocument {:completion {:editsNearCursor true}}
-                :offsetEncoding ["utf-8" "utf-16"]}}
+{:filetypes ["c" "cpp" "objc" "objcpp" "cuda"]
+ :cmd ["clangd"]
+ :root_markers [".clangd" ".clang-tidy" ".clang-format" "compile_commands.json" "compile_flags.txt" "configure.ac" ".git"]
+ :capabilities {:offsetEncoding ["utf-8" "utf-16"]
+                :textDocument {:completion {:editsNearCursor true}}}}

@@ -11,10 +11,18 @@
     (fn [{: buf :data {: client_id}}]
       (local client (vim.lsp.get_client_by_id client_id))
       (tset vim.b buf :lsp client.name)
+
       (when (client:supports_method :textDocument/documentHighlight)
         (augroup lsp#
           (autocmd [:CursorHold :InsertLeave] {:buffer buf} vim.lsp.buf.document_highlight)
           (autocmd [:CursorMoved :InsertEnter] {:buffer buf} vim.lsp.buf.clear_references)))
+
+      (when (client:supports_method :textDocument/inlayHint)
+        (keymap :n
+                "yoh"
+                #(vim.lsp.inlay_hint.enable (not (vim.lsp.inlay_hint.is_enabled {:bufnr buf})) {:bufnr buf})
+                {:buffer buf :desc "Toggle inlay hints"}))
+
       (when (client:supports_method :textDocument/codeLens)
         (autocmd lsp# :LspProgress :end
           (fn [args]

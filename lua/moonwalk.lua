@@ -64,7 +64,7 @@ local function compile(path)
 end
 
 local function walk(dir, ext, f)
-	local subdirs = { "plugin", "config", "indent", "ftplugin", "colors", "lsp", ext }
+	local subdirs = { "plugin", "indent", "ftplugin", "colors", "lsp", ext }
 	local pred = function(name)
 		return name:match(string.format(".*%%.%s", ext))
 	end
