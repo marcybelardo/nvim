@@ -1,5 +1,5 @@
 vim.api.nvim_create_autocmd("LspAttach", {
-    desc = "LSP actions",
+	group = vim.api.nvim_create_augroup("lsp", { clear = true }),
     callback = function(event)
         local opts = { buffer = event.buf }
 

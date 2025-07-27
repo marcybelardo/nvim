@@ -11,6 +11,7 @@ map({ "n", "x" }, "gp", '"+p', "Paste clipboard")
 
 map("n", "<leader>w", "<Cmd>write<CR>", "Save file")
 map("n", "<leader>q", "<Cmd>quitall<CR>", "Quit vim")
+map("n", "<leader>u", "<Cmd>update<CR> <Cmd>source<CR>", "Update vim")
 
 map("n", "<leader>?", "<CMD>Pick oldfiles<CR>", "Search file history")
 map("n", "<leader><space>", "<CMD>Pick buffers<CR>", "Search open files")

@@ -54,16 +54,15 @@ lazy.opts = {}
 lazy.plugins = {
 	{ "rebelot/kanagawa.nvim" },
 	{ "folke/which-key.nvim" },
-	{ "neovim/nvim-lspconfig" },
 	{ "echasnovski/mini.nvim", branch = "main" },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", branch = "main" },
 	{ "MeanderingProgrammer/render-markdown.nvim" },
 	{ "gpanders/nvim-parinfer" },
+	{ "tpope/vim-surround" },
 }
 
 if vim.fn.has("nvim-0.11") == 0 then
 	vim.list_extend(lazy.plugins, {
-		{ "neovim/nvim-lspconfig", tag = "v1.8.0", pin = true },
 		{
 			"nvim-treesitter/nvim-treesitter",
 			tag = "v0.10.0",
