@@ -5,21 +5,21 @@
 
 (setup :mini.icons)
 (setup :mini.files {:mappings {:go_in_plus :<CR>}}
-  (keymap :n "<Space>e" #(MiniFiles.open)))
+  (keymap :n "<leader>e" #(MiniFiles.open) {:desc "Open files"}))
 (setup :mini.extra)
 (setup :mini.pick {:mappings {:toggle_info "<C-/>"}}
   (set MiniPick.config.source.show MiniPick.default_show)
-  (keymap :n "<Space>f" MiniPick.builtin.files)
-  (keymap :n "<Space>/" MiniPick.builtin.grep_live)
-  (keymap :n "<Space>b" MiniPick.builtin.buffers)
-  (keymap :n "<M-S-/>" MiniPick.builtin.help)
+  (keymap :n "<leader>ff" MiniPick.builtin.files {:desc "Pick files"})
+  (keymap :n "<leader>fg" MiniPick.builtin.grep_live {:desc "Live grep"})
+  (keymap :n "<leader><Space>" MiniPick.builtin.buffers {:desc "Pick buffers"})
+  (keymap :n "<leader>fh" MiniPick.builtin.help {:desc "Pick help"})
 
   (when MiniExtra
-    (keymap :n "<Space>r" MiniExtra.pickers.visit_paths)
-    (keymap :n "<Space>g" #(MiniExtra.pickers.diagnostic {:get_opts {:severity {:min vim.diagnostic.severity.WARN}}}))
+    (keymap :n "<leader>fr" MiniExtra.pickers.visit_paths {:desc "Pick paths"})
+    (keymap :n "<leader>fd" #(MiniExtra.pickers.diagnostic {:get_opts {:severity {:min vim.diagnostic.severity.WARN}}}) {:desc "Pick diagnostics"})
     (augroup mini#
-      (autocmd :LspAttach "*" #(keymap :n "<Space>s" #(MiniExtra.pickers.lsp {:scope :workspace_symbol}) {:buffer (. $1 :buf)}))
-      (autocmd :LspAttach "*" #(vim.keymap.del :n "<Space>s" {:buffer (. $1 :buf)})))))
+      (autocmd :LspAttach "*" #(keymap :n "<leader>s" #(MiniExtra.pickers.lsp {:scope :workspace_symbol}) {:buffer (. $1 :buf)}))
+      (autocmd :LspAttach "*" #(vim.keymap.del :n "<leader>s" {:buffer (. $1 :buf)})))))
 (setup :mini.indentscope)
 
 (autocmd mini# :LspAttach {:once true}

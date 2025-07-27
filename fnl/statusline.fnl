@@ -74,7 +74,7 @@
                (match vim.bo.filetype
                  "" ""
                  ft (match vim.b.lsp
-                      name (: " %s%s " :format ft name)
+                      name (: " %s : %s " :format ft name)
                       _ (: " %s " :format ft)))
                (if fancy "%9*" "")
                " %l:%c %P "]]
