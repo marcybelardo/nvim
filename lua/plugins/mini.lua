@@ -47,5 +47,11 @@ require("mini.indentscope").setup({
 
 require("mini.starter").setup({})
 require("mini.extra").setup({})
-require("mini.snippets").setup({})
 require("mini.completion").setup({})
+
+local gen_loader = require("mini.snippets").gen_loader
+require("mini.snippets").setup({
+	snippets = {
+		gen_loader.from_lang(),
+	}
+})

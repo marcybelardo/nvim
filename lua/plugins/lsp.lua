@@ -1,32 +1,30 @@
-vim.api.nvim_create_autocmd("LspAttach", {
-	group = vim.api.nvim_create_augroup("lsp", { clear = true }),
-    callback = function(event)
-        local opts = { buffer = event.buf }
-
-        vim.keymap.set('n', 'K', "<CMD>lua vim.lsp.buf.hover()<CR>", opts)
-        vim.keymap.set('n', 'gD', "<CMD>lua vim.lsp.buf.definition()<CR>", opts)
-    end,
-})
-
-local servers = {
-	bashls = {},
-	clangd = {},
-	gopls = {},
-	elixirls = { cmd = { "/usr/share/elixir-ls/language_server.sh" } },
-	lua_ls = {},
-	rust_analyzer = {},
-	zls = {},
-}
-
-for server, opts in pairs(servers) do
-    if vim.fn.has("nvim-0.11") == 0 then
-        require("lspconfig")[server].setup(opts)
-        return
-    end
-
-    if not vim.tbl_isempty(opts) then
-        vim.lsp.config(server, opts)
-    end
-
+for _, s in ipairs(vim.api.nvim_get_runtime_file("lsp/*.lua", true)) do
+    local server = vim.fn.fnamemodify(s, ":t:r")
     vim.lsp.enable(server)
 end
+
+vim.diagnostic.config({
+	virtual_lines = {
+		current_line = true,
+	},
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
+	float = {
+	    border = "rounded",
+	    source = true,
+	},
+	signs = {
+	    text = {
+		[vim.diagnostic.severity.ERROR] = "󰅚 ",
+		[vim.diagnostic.severity.WARN] = "󰀪 ",
+		[vim.diagnostic.severity.INFO] = "󰋽 ",
+		[vim.diagnostic.severity.HINT] = "󰌶 ",
+	    },
+	    numhl = {
+		[vim.diagnostic.severity.ERROR] = "ErrorMsg",
+		[vim.diagnostic.severity.WARN] = "WarningMsg",
+	    },
+	},
+})
+

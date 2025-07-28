@@ -1,49 +1,36 @@
-local options = {
-	laststatus = 3,
-	ruler = false,
-	showmode = false,
-	showcmd = false,
-	mouse = "a",
-	clipboard = "unnamedplus",
-	history = 100,
-	swapfile = false,
-	backup = false,
-	undofile = true,
-	cursorline = true,
-	ttyfast = true,
-	smoothscroll = true,
-	wrap = false,
+vim.o.ruler = false
+vim.o.showmode = false
+vim.o.showcmd = false
+vim.o.mouse = "a"
+vim.o.clipboard = "unnamedplus"
+vim.o.history = 100
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.undofile = true
+vim.o.cursorline = true
+vim.o.ttyfast = true
+vim.o.smoothscroll = true
+vim.o.wrap = false
 
-	number = true,
-	relativenumber = true,
-	numberwidth = 4,
-	signcolumn = "yes",
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.numberwidth = 4
+vim.o.signcolumn = "yes"
 
-	smarttab = true,
-	cindent = true,
-	tabstop = 4,
-	shiftwidth = 4,
+vim.o.smarttab = true
+vim.o.cindent = true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 
-	foldmethod = "expr",
-	foldlevel = 99,
-	foldexpr = "nvim_treesitter#foldexpr()",
+vim.o.foldmethod = "expr"
+vim.o.foldlevel = 99
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
-	smartcase = true,
-	ignorecase = true,
+vim.o.smartcase = true
+vim.o.ignorecase = true
 
-	hlsearch = true,
+vim.o.hlsearch = true
 
-	termguicolors = true,
-}
+vim.o.termguicolors = true
 
-for k, v in pairs(options) do
-	vim.opt[k] = v
-end
-
-vim.diagnostic.config({
-	signs = false,
-	virtual_lines = {
-		current_line = true,
-	},
-})
-
+vim.g.c_syntax_for_h = true
