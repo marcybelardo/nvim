@@ -17,11 +17,6 @@ vim.o.relativenumber = true
 vim.o.numberwidth = 4
 vim.o.signcolumn = "yes"
 
-vim.o.smarttab = true
-vim.o.cindent = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-
 vim.o.foldmethod = "expr"
 vim.o.foldlevel = 99
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"

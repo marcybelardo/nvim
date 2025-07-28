@@ -14,7 +14,3 @@ cf.setup({
 	zig = { "zigfmt" },
    },
 })
-
-cf.formatters.clang_format = {
-    args = { "-style=Linux" },
-}
