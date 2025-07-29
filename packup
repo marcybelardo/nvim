@@ -117,10 +117,10 @@ plug github.com/rebelot/kanagawa.nvim
 plug github.com/folke/which-key.nvim
 plug github.com/echasnovski/mini.nvim
 plug github.com/nvim-treesitter/nvim-treesitter
-plug github.com/MeanderingProgrammer/render-markdown.nvim
-plug github.com/gpanders/nvim-parinfer
 plug tpope.io/vim/surround
 plug tpope.io/vim/fugitive
 plug tpope.io/vim/sleuth
 plug github.com/rafamadriz/friendly-snippets
-plug github.com/stevearc/conform.nvim
+
+plug github.com/MeanderingProgrammer/render-markdown.nvim opt
+plug github.com/gpanders/nvim-parinfer opt
