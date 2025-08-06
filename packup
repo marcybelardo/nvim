@@ -1,4 +1,4 @@
-#!/bin/sh
+
 
 # c/o gpanders
 
@@ -124,3 +124,5 @@ plug github.com/rafamadriz/friendly-snippets
 
 plug github.com/MeanderingProgrammer/render-markdown.nvim opt
 plug github.com/gpanders/nvim-parinfer opt
+
+packup

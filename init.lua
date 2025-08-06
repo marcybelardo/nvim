@@ -29,4 +29,4 @@ end
 require("plugins.which-key")
 require("plugins.mini")
 require("plugins.lsp")
-require("render-markdown").setup({})
+require("plugins.treesitter")

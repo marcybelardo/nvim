@@ -18,7 +18,7 @@ local function statusline()
 	local lsp = mini_statusline.section_lsp({icon = 'LSP', trunc_width = 75})
 	local lsp_name = ""
 	if vim.lsp.get_clients()[1] ~= nil then
-		lsp_name = string.format(" %s ", vim.lsp.get_clients()[1].name)
+		lsp_name = string.format("%s ", vim.lsp.get_clients()[1].name)
 	end
 	local filename = mini_statusline.section_filename({trunc_width = 140})
 	local percent = '%2p%%'
