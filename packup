@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 
 # c/o gpanders
 
@@ -113,16 +113,26 @@ packup() {
 	fi
 }
 
-plug github.com/rebelot/kanagawa.nvim
+# ui
 plug github.com/folke/which-key.nvim
-plug github.com/echasnovski/mini.nvim
 plug github.com/nvim-treesitter/nvim-treesitter
+plug github.com/rebelot/kanagawa.nvim
+plug github.com/echasnovski/mini.nvim
+
+# tpope
+plug tpope.io/vim/sensible
 plug tpope.io/vim/surround
 plug tpope.io/vim/fugitive
 plug tpope.io/vim/sleuth
-plug github.com/rafamadriz/friendly-snippets
 
-plug github.com/MeanderingProgrammer/render-markdown.nvim opt
-plug github.com/gpanders/nvim-parinfer opt
+# junegunn
+plug github.com/junegunn/goyo.vim
+plug github.com/junegunn/limelight.vim
+
+# lang support
+plug github.com/rafamadriz/friendly-snippets
+plug github.com/MeanderingProgrammer/render-markdown.nvim
+plug github.com/gpanders/nvim-parinfer
+
 
 packup

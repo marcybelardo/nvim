@@ -1,6 +1,4 @@
-local wk = require("which-key")
-
-wk.setup({
+require("which-key").setup({
 	icons = {
 		mappings = false,
 		keys = {
@@ -12,7 +10,7 @@ wk.setup({
 	},
 })
 
-wk.add({
+require("which-key").add({
 	{ "<leader>f", group = "Fuzzy Find" },
 	{ "<leader>b", group = "Buffer" },
 	{ "g", group = "LSP" },
