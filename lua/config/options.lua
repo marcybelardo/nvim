@@ -11,21 +11,17 @@ vim.o.cursorline = true
 vim.o.ttyfast = true
 vim.o.smoothscroll = true
 vim.o.wrap = false
-
+vim.o.winborder = "rounded"
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.numberwidth = 4
 vim.o.signcolumn = "yes"
-
 vim.o.foldmethod = "expr"
 vim.o.foldlevel = 99
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-
 vim.o.smartcase = true
 vim.o.ignorecase = true
-
 vim.o.hlsearch = true
-
 vim.o.termguicolors = true
 
 vim.g.c_syntax_for_h = true
