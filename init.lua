@@ -16,6 +16,8 @@ Plug("folke/which-key.nvim")
 Plug("nvim-treesitter/nvim-treesitter")
 Plug("rebelot/kanagawa.nvim")
 Plug("echasnovski/mini.nvim")
+Plug("zenbones-theme/zenbones.nvim")
+Plug("rktjmp/lush.nvim")
 
 Plug("hrsh7th/cmp-nvim-lsp")
 Plug("hrsh7th/cmp-buffer")
@@ -43,6 +45,7 @@ require("config.autocmd")
 require("config.mappings")
 require("config.options")
 
+vim.o.background = "dark"
 vim.cmd.colorscheme("kanagawa")
 
 if vim.fn.has("nvim-0.11") == 1 then

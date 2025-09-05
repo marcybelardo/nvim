@@ -4,9 +4,6 @@ for _, s in ipairs(vim.api.nvim_get_runtime_file("lsp/*.lua", true)) do
 end
 
 vim.diagnostic.config({
-	virtual_lines = {
-		current_line = true,
-	},
 	underline = true,
 	update_in_insert = false,
 	severity_sort = true,
